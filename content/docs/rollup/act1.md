@@ -27,6 +27,10 @@ Rollup solves these issues by bundling modules, handling CSS files, generating o
 
 ## Activity 1: Without Rollup ##
 
+### For this activity ###
+
+The source code is available in the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/rollup/rollupActivity1/).
+
 ### Folder Structure ###
 ```
 activity1/
@@ -64,15 +68,43 @@ console.log("Product:", multiply(2, 3)); // Access global multiply function
 <html>
     <head>
         <title>Without Rollup</title>
-        <!-- Load scripts manually in the correct order -->
-        <script src="math.js"></script>
+        <!-- Load scripts manually in the incorrect order -->
         <script src="index.js"></script>
+        <script src="math.js"></script>
+        <!-- The above throws an error -->
     </head>
     <body>
         <h1>Without Rollup</h1>
     </body>
 </html>
 ```
+
+**Error Screenshot**
+
+- ![Error output](/docs/rollup/error.png)
+
+**Correct Alternative**
+
+**index.html**
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Without Rollup</title>
+        <!-- Load scripts manually in the correct order -->
+        <script src="math.js"></script>
+        <script src="index.js"></script>
+        <!-- The above throws an error -->
+    </head>
+    <body>
+        <h1>Without Rollup</h1>
+    </body>
+</html>
+```
+
+**Correct Screenshot**
+
+- ![Correct output](/docs/rollup/works.png)
 
 **Why It Fails**
 - Manual Dependency Management:  
@@ -84,8 +116,6 @@ console.log("Product:", multiply(2, 3)); // Access global multiply function
 
 - Performance Issues:  
   Each `<script>` tag results in a separate HTTP request, slowing down page load times.
-
----
 
 ## Activity 1: With Rollup ##
 
@@ -214,7 +244,7 @@ export default {
 
 ---
 
-## Why Rollup Succeeds ##
+## Why Rollup Helps ##
 1. Dependency Resolution:  
    Rollup supports ES6 module syntax and automatically resolves imports and exports, ensuring that dependencies are included in the correct order.
 

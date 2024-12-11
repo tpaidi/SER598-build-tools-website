@@ -68,15 +68,43 @@ console.log("Product:", multiply(2, 3)); // Access global multiply function
 <html>
     <head>
         <title>Without Rollup</title>
-        <!-- Load scripts manually in the correct order -->
-        <script src="math.js"></script>
+        <!-- Load scripts manually in the incorrect order -->
         <script src="index.js"></script>
+        <script src="math.js"></script>
+        <!-- The above throws an error -->
     </head>
     <body>
         <h1>Without Rollup</h1>
     </body>
 </html>
 ```
+
+**Error Screenshot**
+
+- ![Error output](/docs/rollup/error.png)
+
+**Correct Alternative**
+
+**index.html**
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Without Rollup</title>
+        <!-- Load scripts manually in the correct order -->
+        <script src="math.js"></script>
+        <script src="index.js"></script>
+        <!-- The above throws an error -->
+    </head>
+    <body>
+        <h1>Without Rollup</h1>
+    </body>
+</html>
+```
+
+**Correct Screenshot**
+
+- ![Correct output](/docs/rollup/works.png)
 
 **Why It Fails**
 - Manual Dependency Management:  
@@ -216,7 +244,7 @@ export default {
 
 ---
 
-## Why Rollup Succeeds ##
+## Why Rollup Helps ##
 1. Dependency Resolution:  
    Rollup supports ES6 module syntax and automatically resolves imports and exports, ensuring that dependencies are included in the correct order.
 

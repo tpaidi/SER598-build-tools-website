@@ -187,6 +187,12 @@ npm run build
 
 ---
 
+### Final Output Screenshot
+
+- [Final typescript Bundle after following the above steps](/docs/rollup/typescript_bundle.png)
+
+---
+
 ### Summary of Changes ###
 1. **Install TypeScript Support**: Added the Rollup TypeScript plugin and TypeScript itself.
 2. **TypeScript Configuration**: Created `tsconfig.json` to define compiler options.

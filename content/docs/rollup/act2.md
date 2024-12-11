@@ -59,6 +59,8 @@ export default {
 
   - The JavaScript bundle (`bundle.js`) will be minified, resulting in a smaller file size.
 
+- [Cost reduction](/docs/rollup/reduction.png) Reduction of bundle size
+
 ---
 
 ### Step 2: Resolving Node.js Modules
@@ -91,6 +93,8 @@ console.log(_.capitalize('hello rollup'));
 
   - The bundle includes the `lodash` module, enabling its usage in the code.
 
+  - [Visualizer from Step 4 showing loadash imported](/docs/rollup/visualiser.png)
+
 ---
 
 ### Step 3: Converting CommonJS Modules
@@ -112,16 +116,17 @@ export default {
 #### Example Usage
 In `src/index.js`, require the `moment` library (a CommonJS module):
 ```javascript
-const moment = require('moment');
-
+import moment from 'moment'; // not in commonjs syntax, which is intended.
 console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 ```
 
 #### Expected Outcome
 
-- Since the rollup bundle requires us to have it in ES6 format, we would need to convert a format like commonjs to ES6 before bundling. One such libraru is moment. Hence the below is the expected outcome - 
+- Since the rollup bundle requires us to have it in ES6 format, we would need to convert a format like commonjs to ES6 before bundling. One such library is moment. Hence the below is the expected outcome - 
 
 - The `moment` library is converted to ES6 format and included in the bundle.
+
+- [Visualizer from Step 4 showing moment imported](/docs/rollup/moment_in_visualiser.png)
 
 ---
 

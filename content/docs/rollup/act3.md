@@ -68,6 +68,7 @@ input: ['./src/index.js', './src/another.js'],
 
   - The output bundles will contain separate files for `index.js`, `another.js`, and their dependencies, ensuring only relevant chunks are loaded.
 
+  - [Code splitting gives us both modules in separate bundles](/docs/rollup/code_splitting_and_dynamic_import.png)
 ---
 
 ### Step 2: Preserve Modules
@@ -97,6 +98,8 @@ output: [
 
   - The `dist/cjs/` folder will retain the modular structure of the source files.
   - The `dist/esm/` folder will contain bundled ES module files.
+
+- [Preserve modules option for output plugin prserving module structure](/docs/rollup/preserve_module.png)
 
 ---
 
@@ -141,6 +144,9 @@ export function toUpperCase(str) {
 
   - The dynamically imported modules (`dynamicImport1.js` and `dynamicImport2.js`) will be loaded only when requested at runtime.
 
+  [dynamicImport bundle files](/docs/rollup/code_splitting_and_dynamic_import.png)
+  [Not used in bundle](/docs/rollup/dynamic_import.png)
+
 ---
 
 ### Step 4: Multiple Output Formats
@@ -170,6 +176,8 @@ output: [
 
   - The `dist/cjs/` folder will contain CommonJS bundles.
   - The `dist/esm/` folder will contain ES module bundles.
+
+- [Multiple folders within dist](/docs/rollup/multiple_output_formats.png)
 
 ---
 

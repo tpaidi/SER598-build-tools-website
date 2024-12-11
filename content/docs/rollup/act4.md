@@ -16,6 +16,10 @@ This activity introduces TypeScript-specific configurations, file conversions, a
 
 ## Activity 4: TypeScript Integration ##
 
+### For this activity ###
+
+The source code is available in the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/rollup/rollupActivity4/).
+
 ### Folder Structure ###
 ```
 activity4/
@@ -175,8 +179,11 @@ npm run build
 ```
 
 #### Expected Output
-- Bundled JavaScript files in `dist/cjs` and `dist/esm`.
-- Type declaration files (`.d.ts`) in `dist/cjs/types` and `dist/esm/types`.
+
+- The above changes are focused on taking are typescript application and providing the similar results as we would get for a normal js application. For the same, we would expect the following output - 
+
+  - Bundled JavaScript files in `dist/cjs` and `dist/esm`.
+  - Type declaration files (`.d.ts`) in `dist/cjs/types` and `dist/esm/types`.
 
 ---
 

@@ -18,6 +18,10 @@ These changes help optimize large projects, improve runtime performance, and ens
 
 ## Activity 3: Code Splitting and Modular Bundling ##
 
+### For this activity ###
+
+The source code is available in the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/rollup/rollupActivity3/).
+
 ### Folder Structure ###
 ```
 activity3/
@@ -59,7 +63,10 @@ input: ['./src/index.js', './src/another.js'],
 ```
 
 #### Expected Outcome
-- The output bundles will contain separate files for `index.js`, `another.js`, and their dependencies, ensuring only relevant chunks are loaded.
+
+- This step focuses on the outcome of doing code splitting as given above. Hence the below outcome is expected - 
+
+  - The output bundles will contain separate files for `index.js`, `another.js`, and their dependencies, ensuring only relevant chunks are loaded.
 
 ---
 
@@ -85,8 +92,11 @@ output: [
 ```
 
 #### Expected Outcome
-- The `dist/cjs/` folder will retain the modular structure of the source files.
-- The `dist/esm/` folder will contain bundled ES module files.
+
+- This step is present for providing the difference in bundle creation when preserveModules option is used. Hence the following outcome is observed - 
+
+  - The `dist/cjs/` folder will retain the modular structure of the source files.
+  - The `dist/esm/` folder will contain bundled ES module files.
 
 ---
 
@@ -126,7 +136,10 @@ export function toUpperCase(str) {
 ```
 
 #### Expected Outcome
-- The dynamically imported modules (`dynamicImport1.js` and `dynamicImport2.js`) will be loaded only when requested at runtime.
+
+- The above step is focused on preventing the loading of files that aren't required at a certain point of time. Hence the following should happen - 
+
+  - The dynamically imported modules (`dynamicImport1.js` and `dynamicImport2.js`) will be loaded only when requested at runtime.
 
 ---
 
@@ -152,8 +165,11 @@ output: [
 ```
 
 #### Expected Outcome
-- The `dist/cjs/` folder will contain CommonJS bundles.
-- The `dist/esm/` folder will contain ES module bundles.
+
+- The above step focuses on creating two separate output files for compatibility with different environment. Hence our output should have two dist folders and the expected output should look like - 
+
+  - The `dist/cjs/` folder will contain CommonJS bundles.
+  - The `dist/esm/` folder will contain ES module bundles.
 
 ---
 

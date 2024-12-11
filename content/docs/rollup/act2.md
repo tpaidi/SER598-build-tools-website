@@ -10,6 +10,10 @@ In this activity, we explore advanced features of Rollup to enhance optimization
 
 ## Activity 2: Advanced Features with Rollup ##
 
+### For this activity ###
+
+The source code is available in the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/rollup/rollupActivity2/).
+
 ### Folder Structure ###
 ```
 activity2/
@@ -50,7 +54,10 @@ export default {
 ```
 
 #### Expected Outcome
-- The JavaScript bundle (`bundle.js`) will be minified, resulting in a smaller file size.
+
+- Minifying allows us to have smaller bundle files which gives us faster load times and lower bandwidth costs. The following step works hand in hand with step 5. The bundle sizes displayed should be clearly smaller. Hence the expected outcome is as below - 
+
+  - The JavaScript bundle (`bundle.js`) will be minified, resulting in a smaller file size.
 
 ---
 
@@ -79,7 +86,10 @@ console.log(_.capitalize('hello rollup'));
 ```
 
 #### Expected Outcome
-- The bundle includes the `lodash` module, enabling its usage in the code.
+
+- This is focusing on the use of resolve() allowing us to use modules like lodash which would not be possible without this plugin's presence. Hence this is the expected outcome - 
+
+  - The bundle includes the `lodash` module, enabling its usage in the code.
 
 ---
 
@@ -108,6 +118,9 @@ console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 ```
 
 #### Expected Outcome
+
+- Since the rollup bundle requires us to have it in ES6 format, we would need to convert a format like commonjs to ES6 before bundling. One such libraru is moment. Hence the below is the expected outcome - 
+
 - The `moment` library is converted to ES6 format and included in the bundle.
 
 ---
@@ -131,7 +144,7 @@ export default {
 };
 ```
 
-#### Output
+#### Expected Output
 Run the build process:
 ```bash
 npm run build
@@ -162,7 +175,7 @@ export default {
 };
 ```
 
-#### Output
+#### Expected Output
 Run the build process:
 ```bash
 npm run build

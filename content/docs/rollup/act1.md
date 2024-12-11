@@ -27,6 +27,10 @@ Rollup solves these issues by bundling modules, handling CSS files, generating o
 
 ## Activity 1: Without Rollup ##
 
+### For this activity ###
+
+The source code is available in the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/rollup/rollupActivity1/).
+
 ### Folder Structure ###
 ```
 activity1/
@@ -84,8 +88,6 @@ console.log("Product:", multiply(2, 3)); // Access global multiply function
 
 - Performance Issues:  
   Each `<script>` tag results in a separate HTTP request, slowing down page load times.
-
----
 
 ## Activity 1: With Rollup ##
 

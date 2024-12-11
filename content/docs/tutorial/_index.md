@@ -1,9 +1,10 @@
 ---
 weight: 1
 title: "Learning Outcomes"
-bookToc: false
+bookToc: true
+bookFlatSection: false
 ---
-# Leaning Outcomes
+# Overview & Learning Outcomes
 
 ## Tutorial Overview
 
@@ -40,3 +41,5 @@ This tutorial assumes you have a basic knowledge of the below web tools and tech
 - Basic understanding of HTML, CSS, and JavaScript
 - Familiarity with command-line interfaces
 - Emphasising that you should have built a couple of web applications using HTML, CSS and vanilla JavaScript!
+
+<!-- {{<button relref="/docs/history">}}>> History{{</button>}} -->

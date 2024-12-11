@@ -1,11 +1,11 @@
 ---
 weight: 1
 bookFlatSection: true
-bookToc: false
+bookToc: true
 title: "Leaning outcomes"
 ---
 
-# Leaning Outcomes
+# Overview & Leaning Outcomes
 
 ## Tutorial Overview
 
@@ -42,3 +42,5 @@ This tutorial assumes you have a basic knowledge of the below web tools and tech
 - Basic understanding of HTML, CSS, and JavaScript
 - Familiarity with command-line interfaces
 - Emphasising that you should have built a couple of web applications using HTML, CSS and vanilla JavaScript!
+
+{{<button relref="/docs/webpack/act1/">}}>> Act 1{{</button>}}

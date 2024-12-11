@@ -1,4 +1,5 @@
 ---
+weight: 5
 bookFlatSection: false
 ---
 # **Introduction to the Webpack section of the tutorial**

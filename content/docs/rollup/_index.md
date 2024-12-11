@@ -1,7 +1,7 @@
 ---
 bookFlatSection: false
 ---
-# **Introduction to the Webpack section of the tutorial**
+# **Introduction to the Rollup section of the tutorial**
 
 Webpack is a powerful **module bundler** primarily used for JavaScript applications. It processes application files, bundles modules, and optimizes assets like JavaScript, CSS, images, and more, transforming them into a format easily deployable in web environments.
 

@@ -1,7 +1,7 @@
 ---
 weight: 1
 bookFlatSection: true
-bookToc: true
+bookToc: false
 title: "Leaning outcomes"
 ---
 
@@ -42,5 +42,12 @@ This tutorial assumes you have a basic knowledge of the below web tools and tech
 - Basic understanding of HTML, CSS, and JavaScript
 - Familiarity with command-line interfaces
 - Emphasising that you should have built a couple of web applications using HTML, CSS and vanilla JavaScript!
+
+{{% hint info %}}
+**Note about all the source code used in this tutorial**  
+All the source code used for the guides throughout this tutorial resides on this [remote git respository](https://github.com/tpaidi/SER598-build-tools-tutorial).
+
+Specific folders will be referenced in granular detail when we dive deeper into each activity!
+{{% /hint %}}
 
 {{<button relref="/docs/webpack/act1/">}}>> Act 1{{</button>}}

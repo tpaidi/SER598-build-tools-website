@@ -1,5 +1,5 @@
 ---
-bookToc: false
+bookToc: true
 title: "Activity 1"
 ---
 # **Webpack Demonstration: Activities 1 and 2**

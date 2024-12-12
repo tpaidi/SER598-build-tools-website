@@ -103,8 +103,8 @@ Rename all `.js` files in the `src/` folder to `.ts` and add type annotations wh
 #### Example Conversion
 **Before (JavaScript):**
 ```javascript
-export function add(num1: number, num2: number): number {
-    return num1 + num2;
+function toUpperCase(stringToConvert) {
+    return stringToConvert.toUpperCase();
 }
 ```
 

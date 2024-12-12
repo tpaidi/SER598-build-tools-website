@@ -1,9 +1,12 @@
 ---
 weight: 9
-title: "Our Opinion"
+title: "Analytical Component"
 bookToc: true
 bookFlatSection: false
 ---
+
+# Analytical Component
+
 ### Main Opinions built from the below observations section and our experience using it ourselves.
 
 # General Pros/Cons of the tools described

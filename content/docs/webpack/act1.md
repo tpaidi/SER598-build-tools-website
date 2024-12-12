@@ -16,10 +16,7 @@ Modern web applications often consist of multiple JavaScript files. Managing the
 2. **Global Namespace Pollution**:
    - Sharing code between files relies on global variables, increasing the risk of variable name conflicts.
 
-3. **Performance Limitations**:
-   - Each JavaScript file generates an HTTP request, increasing page load times.
-
-4. **Scalability Issues**:
+3. **Scalability Issues**:
    - Managing dependencies manually becomes unmanageable as the application grows.
 
 Webpack is a tool that solves these problems by bundling JavaScript files and resolving dependencies automatically. This tutorial demonstrates these concepts step-by-step through two activities.
@@ -82,17 +79,12 @@ Let's now open up the `index.html` file on our browser to start the application 
 
 
 ### **Why It Fails**
-1. **Manual Dependency Management**:
    - If the `<script>` tags in `index.html` are not in the correct order (e.g., `index.js` before `math.js`), the browser will throw an error:
      ```
      Uncaught ReferenceError: add is not defined
      ```
 
-2. **Global Namespace Pollution**:
    - All functions are attached to the global `window` object, increasing the risk of name conflicts as the application grows.
-
-3. **Performance Issues**:
-   - Each `<script>` tag results in a separate HTTP request, slowing down page load times.
 
 ---
 
@@ -208,18 +200,6 @@ module.exports = {
    Open `index.html` in your browser. Ensure that it loads `dist/bundle.js`, we can also see that the `console.log()` works undependant on import order
 
 	![2](/docs/webpack/2.png)
----
-
-### **Why Webpack Succeeds**
-1. **Dependency Resolution**:
-   - Webpack automatically resolves dependencies and bundles all files into `dist/bundle.js`.
-
-2. **Script Order**:
-   - Script order in `index.html` doesn’t matter because Webpack handles dependencies internally.
-
-3. **Scalability**:
-   - Webpack simplifies managing large projects by modularizing code and resolving dependencies.
-
 ---
 
 ## **Conclusion**

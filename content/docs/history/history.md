@@ -18,11 +18,11 @@ One of the first bundling tools was **Browserify**, launched in 2011. Interestin
 
 Browserify was the first JavaScript bundler. It bundled different scripts from npm by parsing `require` statements in the code. While it excelled at bundling scripts, it lacked advanced code transformation capabilities.
 
-Over time, Browserify progressed by integrating plugins and transforming libraries like Babelify, enabling modern JavaScript syntax support and simplifying workflows. These transformations aligned with evolving **ECMAScript (ES)** standards, particularly after **ES5** and **ES6** introduced module syntax improvements.
+Over time, Browserify progressed by integrating plugins and transforming libraries like Babelify, enabling modern JavaScript syntax support and simplifying workflows. These transformations aligned with evolving **ECMAScript (ES)** standards, particularly after **ES5** and **ES6** introduced module syntax improvements. [1]
 
 ---
 
-## [Webpack](https://webpack.js.org/)
+## [Webpack](https://webpack.js.org/) [2]
 
 **Webpack**, created by Tobias Koppers, was first released in 2012. It has since become one of the most popular bundlers in the web development community. While Browserify aimed to run Node.js modules in the browser, Webpack aimed to create a comprehensive dependency graph for all website assets, including JavaScript, CSS, images, and HTML.
 
@@ -30,13 +30,13 @@ Over time, Browserify progressed by integrating plugins and transforming librari
 
 - **Dependency Graph**: Manages various asset types.
 - **Code Splitting**: Enables smaller bundles and prioritized resource loading.
-- **Steep Learning Curve**: Despite its complexity, Webpack remains a popular tool due to its powerful features.
 
 Webpack adopted JavaScript module specifications as defined by **ES6 modules (import/export)**, enabling seamless integration with modern frameworks. Its ecosystem expanded with plugins supporting TypeScript and PostCSS.
 
+Although many people say it has a very steep learning curve.
 ---
 
-## [Parcel](https://parceljs.org/)
+## [Parcel](https://parceljs.org/) [7]
 
 Released in 2017, **Parcel** is an open-source project designed to simplify the complexities of traditional bundlers with a zero-configuration approach.
 
@@ -62,7 +62,7 @@ Rollup was one of the first tools to embrace **ES6 modules (import/export)**, en
 
 ---
 
-## [ESBuild](https://esbuild.github.io/)
+## [ESBuild](https://esbuild.github.io/) [8]
 
 Released in 2020 by Evan Wallace, **EsBuild** is written in Go and designed for highly parallelized build processes, leveraging all available CPU cores for optimization.
 
@@ -75,7 +75,7 @@ EsBuild supports modern JavaScript standards like **ESNext** and TypeScript out 
 
 ---
 
-## ECMAScript (ES) Standards and Bundling Evolution
+## ECMAScript (ES) Standards and Bundling Evolution [3]
 
 JavaScript's evolution under the **ECMAScript (ES)** standard played a significant role in shaping bundlers. Since **ES6 (ECMAScript 2015)** introduced core features like modules (`import`/`export`), arrow functions, and classes, each subsequent ES update encouraged bundlers to adapt and improve.
 

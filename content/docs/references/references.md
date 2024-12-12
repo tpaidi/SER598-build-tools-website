@@ -5,35 +5,29 @@ bookToc: true
 bookFlatSection: false
 ---
 # References
+# References
 
 1. [A Brief and Incomplete History of JavaScript Bundlers](https://nolanlawson.com/2017/05/22/a-brief-and-incomplete-history-of-javascript-bundlers/)
 
-2. [Webpack vs Rollup: A Comprehensive Comparison](https://www.evolvingdev.com/post/webpack-vs-rollup)
+2. [Overview of Webpack, a JavaScript Bundler](https://johnnyreilly.com/webpack-overview)
 
-3. [A History of JavaScript Modules and Bundling](https://8thlight.com/insights/a-history-of-javascript-modules-and-bundling-for-the-post-es6-developer)
+3. [State of the Web: Bundlers & Build Tools](https://byteofdev.com/posts/bundlers/)
 
-4. [Overview of Webpack, a JavaScript Bundler](https://johnnyreilly.com/webpack-overview)
+4. [Official Webpack Documentation](https://webpack.js.org/)
 
-5. [State of the Web: Bundlers & Build Tools](https://byteofdev.com/posts/bundlers/)
+5. [Official Rollup Documentation](https://rollupjs.org/)
 
-6. [Official Webpack Documentation](https://webpack.js.org/)
+6. [Code Splitting Guide](https://webpack.js.org/guides/code-splitting/)
 
-7. [Official Rollup Documentation](https://rollupjs.org/)
+7. [Official Parcel Documentation](https://parceljs.org)
 
-8. [Rollup vs Webpack vs Parcel](https://kinsta.com/blog/rollup-vs-webpack-vs-parcel/)
+8. [Why Is EsBuild Fast?](https://esbuild.github.io/faq/#why-is-esbuild-fast)
 
-9. [Bundlers Overview](https://byteofdev.com/posts/bundlers/)
+9. [Webpack GitHub Repository](https://github.com/webpack/webpack)
 
-10. [Code Splitting Guide](https://webpack.js.org/guides/code-splitting/)
+10. [Lazy Loading with Webpack](https://webpack.js.org/guides/lazy-loading/)
 
-11. [JS Toolbox 2024: Bundlers and Test Frameworks](https://dev.to/olwiba/js-toolbox-2024-bundlers-and-test-frameworks-30f9)
+11. [HTML Webpack Plugin](https://webpack.js.org/plugins/html-webpack-plugin/)
 
-12. [Official Parcel Documentation](https://parceljs.org)
+12. [MiniCssExtractPlugin](https://webpack.js.org/plugins/mini-css-extract-plugin/)
 
-13. [Tree Shaking Explained](https://rollupjs.org/faqs/#what-is-tree-shaking)
-
-14. [Why Is EsBuild Fast?](https://esbuild.github.io/faq/#why-is-esbuild-fast)
-
-15. [Webpack GitHub Repository](https://github.com/webpack/webpack)
-
-16. [Lazy Loading with Webpack](https://webpack.js.org/guides/lazy-loading/)

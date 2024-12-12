@@ -130,6 +130,108 @@ We can start by copying our Part 1 of the activity into a fresh directory and go
 	}
 	};
    ```
+#### Explanation of Key Sections:
+
+1. **Entry Points:**
+   ```javascript
+   entry: {
+     main: './src/index.js',
+     planet: './src/planet.js'
+   },
+   ```
+   - Specifies multiple entry points: `main` for the main page (`index.html`) and `planet` for the planet details page (`planet.html`).
+   - Each entry point generates its own JavaScript bundle.
+
+2. **Output Configuration:**
+   ```javascript
+   output: {
+     filename: '[name].[contenthash].js',
+     path: path.resolve(__dirname, 'dist'),
+     clean: true
+   },
+   ```
+   - `[name]` dynamically names the output file based on the entry point name (e.g., `main.[hash].js`, `planet.[hash].js`).
+   - `contenthash` ensures that filenames change when the file content changes, enabling efficient caching.
+   - `path` specifies the directory where the bundled files will be output (`dist`).
+   - `clean: true` ensures the `dist` folder is cleaned before each build.
+
+3. **Mode:**
+   ```javascript
+   mode: 'development',
+   ```
+   - Specifies the build mode (`development` or `production`). In `development`, Webpack prioritizes speed and readability over optimization.
+
+4. **DevServer Configuration:**
+   ```javascript
+   devServer: {
+     static: './dist',
+     port: 3000,
+     hot: true
+   },
+   ```
+   - Serves the application locally from the `dist` directory.
+   - `hot: true` enables Hot Module Replacement (HMR) for live-reloading during development.
+
+5. **Module Rules:**
+   ```javascript
+   module: {
+     rules: [
+       {
+         test: /\.css$/i,
+         use: [MiniCssExtractPlugin.loader, 'css-loader']
+       },
+       {
+         test: /\.(png|jpe?g|svg|gif)$/i,
+         type: 'asset/resource'
+       },
+       {
+         test: /\.(woff|woff2|ttf|eot|otf)$/i,
+         type: 'asset/resource'
+       }
+     ]
+   },
+   ```
+   - **CSS Rule:** Processes `.css` files using `css-loader` (to bundle CSS) and `MiniCssExtractPlugin.loader` (to extract CSS into separate files).
+   - **Image Rule:** Handles image files (e.g., `.png`, `.jpg`, `.svg`) as `asset/resource`, moving them to the output directory and replacing file references with the correct paths.
+   - **Font Rule:** Similar to images, processes font files and outputs them to the `dist` folder.
+
+6. **Plugins:**
+   ```javascript
+   plugins: [
+     new HtmlWebpackPlugin({
+       template: './src/templates/index.html',
+       filename: 'index.html',
+       chunks: ['main']
+     }),
+     new HtmlWebpackPlugin({
+       template: './src/templates/planet.html',
+       filename: 'planet.html',
+       chunks: ['planet']
+     }),
+     new MiniCssExtractPlugin({
+       filename: '[name].[contenthash].css'
+     })
+   ],
+   ```
+   - **HtmlWebpackPlugin:** Automatically generates `index.html` and `planet.html` with the correct `<script>` tags for their respective bundles.
+     - `chunks` ensures only the relevant bundle (`main` or `planet`) is included in each page.
+   - **MiniCssExtractPlugin:** Extracts CSS into separate files for better caching and smaller JS bundles.
+
+7. **Optimization:**
+   ```javascript
+   optimization: {
+     splitChunks: {
+       chunks: 'all'
+     }
+   }
+   ```
+   - Enables code splitting for shared dependencies (e.g., third-party libraries like `lodash`) to avoid duplicating code across bundles.
+
+---
+
+This configuration allows for multiple entry points, optimized output, automated asset handling, and dynamic HTML generation, providing a scalable and maintainable build system for the Cosmic Explorer project.
+
+
 
 ## 2. Structuring Your Code for Webpack
 
@@ -292,14 +394,31 @@ If something doesn’t work:
 - Use production mode to ensure tree shaking and minification are applied.
 
 ---
-
+![Alt text](<Screenshot 2024-12-11 at 11.31.14 PM.png>)
 ## Conclusion
 
 By integrating webpack:
 
 - We eliminated manual script and style references.
 - Enabled code splitting and lazy loading for improved performance.
+Below we can see how on only clicking on any planet, it's corresponding JavaScript packet gets called, this shows us the benefit of code splitting
+
+![Lazy](/docs/webpack/lazy.png "lazy")
+
 - Introduced tree shaking to remove unused code, reducing bundle sizes.
+
+1. Here we can see code we have used below being generated when the final dist bundle is created, hence it's present twice, once in the development code and once in the dist code
+![used](/docs/webpack/used.png "used")
+
+2. In contrast, below we see some code which was not being used in the app not bundled into the dist code. 
+![unused](/docs/webpack/unused.png "unused")
+
+This shows us tree shaking and its benefits in action!
+
 - Automated HTML generation, making it easier to scale and maintain the app.
 
+
 This tutorial shows how a manual setup can evolve into a modern, optimized build system that improves maintainability, scalability, and performance.
+
+
+Completed code after this activity can be found on the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/webpack/activity2webpack/cosmic-explorer-webpack).

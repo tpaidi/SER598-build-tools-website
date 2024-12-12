@@ -2,7 +2,9 @@
 bookToc: true
 title: "Activity 1"
 ---
-# **Webpack Demonstration: Activities 1 and 2**
+# **Webpack Demonstration: Activity 1 with and without Webpack**
+
+code for this activity can be found on the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/webpack/activity2webpack/cosmic-explorer-webpack).
 
 ## **Problem Overview**
 Modern web applications often consist of multiple JavaScript files. Managing these files manually can lead to several challenges, such as:
@@ -43,37 +45,43 @@ function add(a, b) {
     return a + b;
 }
 
-function multiply(a, b) {
-    return a * b;
-}
-
-// Attach functions to the global window object
 window.add = add;
-window.multiply = multiply;
 ```
 
 #### `index.js`
 ```javascript
 // index.js
-console.log("Sum:", add(2, 3)); // Access global add function
-console.log("Product:", multiply(2, 3)); // Access global multiply function
+console.log(add(3, 5));
 ```
 
 #### `index.html`
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Without Webpack</title>
-        <!-- Load scripts manually in the correct order -->
-        <script src="math.js"></script>
-        <script src="index.js"></script>
-    </head>
-    <body>
-        <h1>Without Webpack</h1>
-    </body>
+<body>
+	<!-- Correct order of import -->
+	<script src="math.js"></script>
+	<script src="index.js"></script>
+
+
+	<!-- Incorrect order of import, will not work -->
+	<!-- <script src="index.js"></script> -->
+	<!-- <script src="math.js"></script> -->
+
+</body>
 </html>
 ```
+
+Let's now open up the `index.html` file on our browser to start the application and see if the `console.log()` works.
+
+1. With the incorrect order of import (Uncomment the incorrect order of import lines and comment the correct order lines)
+
+![incorrect](/docs/webpack/incorrect.png)
+
+2. With the correct order of import, we can see that it works successfully (Uncomment the correct order of import lines and comment the incorrect order lines)
+
+![correct](/docs/webpack/correct.png)
+
 
 ### **Why It Fails**
 1. **Manual Dependency Management**:

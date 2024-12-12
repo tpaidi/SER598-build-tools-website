@@ -41,6 +41,7 @@ This tutorial assumes you have a basic knowledge of the below web tools and tech
 
 - Basic understanding of HTML, CSS, and JavaScript
 - Familiarity with command-line interfaces
+- Familiarity with `node` and `npm`
 - Emphasising that you should have built a couple of web applications using HTML, CSS and vanilla JavaScript!
 
 {{% hint info %}}

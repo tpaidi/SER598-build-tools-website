@@ -41,6 +41,12 @@ activity2/
 ### Step 1: Minifying the Bundle
 Minifying the bundle reduces its size by removing unnecessary characters such as whitespace, comments, and unused code. We achieve this using the **Terser** plugin.
 
+#### Installation
+
+```bash
+   npm install --save-dev @rollup/plugin-terser
+```
+
 #### Code Changes
 Add the Terser plugin to the `rollup.config.js` file:
 ```javascript
@@ -66,6 +72,12 @@ export default {
 ### Step 2: Resolving Node.js Modules
 Node.js libraries like `lodash` are not accessible by default in Rollup. The **Resolve** plugin allows us to resolve these dependencies from the `node_modules` directory.
 
+#### Installation
+
+```bash
+   npm install --save-dev @rollup/plugin-node-resolve
+```
+
 #### Code Changes
 Add the Resolve plugin to the `rollup.config.js` file:
 ```javascript
@@ -79,6 +91,12 @@ export default {
 ```
 
 #### Example Usage
+
+Install lodash for testing the below code - 
+```bash
+  npm install --save-dev lodash
+```
+
 In `src/index.js`, import `lodash` (a Node.js module):
 ```javascript
 import _ from 'lodash';
@@ -99,6 +117,12 @@ console.log(_.capitalize('hello rollup'));
 ### Step 3: Converting CommonJS Modules
 Some libraries, such as `moment`, are written in the CommonJS format. The **CommonJS** plugin converts these modules to ES6 so they can be included in the Rollup bundle.
 
+#### Installation
+
+```bash
+  npm install --save-dev @rollup/plugin-commonjs
+```
+
 #### Code Changes
 Add the CommonJS plugin to the `rollup.config.js` file:
 ```javascript
@@ -112,6 +136,11 @@ export default {
 ```
 
 #### Example Usage
+
+Install moment for testing the below code- 
+```bash
+  npm install --save-dev moment
+```
 In `src/index.js`, require the `moment` library (a CommonJS module):
 ```javascript
 import moment from 'moment'; 
@@ -130,6 +159,12 @@ console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
 ### Step 4: Visualizing the Bundle
 The **Visualizer** plugin generates an interactive HTML report that shows the size and composition of the bundle. This helps identify large dependencies and optimize the project.
+
+#### Installation
+
+```bash
+   npm install --save-dev rollup-plugin-visualizer
+```
 
 #### Code Changes
 Add the Visualizer plugin to the `rollup.config.js` file:
@@ -161,6 +196,12 @@ The `dist/bundle-stats.html` file is generated, showing the composition of the b
 
 ### Step 5: Analyzing the Bundle
 The **Analyzer** plugin provides a summary of the bundle, including its size, module count, and code reduction. This is displayed in the terminal after building.
+
+#### Installation
+
+```bash
+   npm install --save-dev rollup-plugin-analyzer
+```
 
 #### Code Changes
 Add the Analyzer plugin to the `rollup.config.js` file:

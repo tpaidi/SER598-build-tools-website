@@ -4,7 +4,34 @@ title: "Our Opinion"
 bookToc: true
 bookFlatSection: false
 ---
-### Overall Observations for the basis of general opinions
+### Main Opinions built from the below observations section and our experience using it ourselves.
+
+# General Pros/Cons of the tools described
+
+- Webpack is still the most followed and provides the most configuration. In the case that you plan to scale and create a much more configurable project for the long-run, it is better to go with webpack. Given its reach community support, it also feels like a safer option for new developers.
+
+- Parcel seems to losing popularity mostly because it lacks in many areas like adoption of new features, community support, also seems to be a heavier bundler [even with Parcel 2](https://github.com/parcel-bundler/parcel/issues/4565) 
+
+- Rollup and ESBuild on the other hand have been gaining popularity and have found their uses in different ways. Notably in the building of the popular framework Vite. Vite uses both Rollup and ESBuild. Reasons and resources have been attached but essentially, unlike Parcel, they are much closer to newer requirements of performance and optimizations.
+
+# Opinions based on experience
+
+- Rollup: 
+
+  - Pro
+    - Rollup was very straightforward to use and provided a lot of features to directly integrate. We enjoyed working with it and will consider it as a possible option as a build tool in the future.
+  - Con
+    - We did run into a few obscure issues related to code splitting and typescript. There definitely does seem to be some lack of flexibility in comparison to Webpack with some of these corner cases.
+
+- Webpack:
+
+  - Pro
+    - Great documentation and support meant that we had a very smooth time building an application with webpack. Working with webpack was enjoyable and webpack will go forward as our first consideration for future developement.
+  - Con
+    - Lots of inbuilt configurations meant that it lacked a little simplicity. For smaller projects, it feels like webpack might be doing too much. 
+---
+
+### Overall Observations for the basis of general opinions above
 
 We will go through and make observations regarding each of the main bundling tools and then later, come to some opinions based on these observations.
 
@@ -61,29 +88,4 @@ Independent source which has also given the testing criteria just like the githu
 - Important point - Vite has adopted ESbuild along with Rollup. Vite pre-bundles dependencies using esbuild. [Vite documentation](https://vitejs.dev/guide/why.html)
 
 ---
-### Main Opinions built from the above and our experience using it ourselves
-
-# General Pros/Cons of the tools described
-
-- Webpack is still the most followed and provides the most configuration. In the case that you plan to scale and create a much more configurable project for the long-run, it is better to go with webpack. Given its reach community support, it also feels like a safer option for new developers.
-
-- Parcel seems to losing popularity mostly because it lacks in many areas like adoption of new features, community support, also seems to be a heavier bundler [even with Parcel 2](https://github.com/parcel-bundler/parcel/issues/4565) 
-
-- Rollup and ESBuild on the other hand have been gaining popularity and have found their uses in different ways. Notably in the building of the popular framework Vite. Vite uses both Rollup and ESBuild. Reasons and resources have been attached but essentially, unlike Parcel, they are much closer to newer requirements of performance and optimizations.
-
-# Opinions based on experience
-
-- Rollup: 
-
-  - Pro
-    - Rollup was very straightforward to use and provided a lot of features to directly integrate. We enjoyed working with it and will consider it as a possible option as a build tool in the future.
-  - Con
-    - We did run into a few obscure issues related to code splitting and typescript. There definitely does seem to be some lack of flexibility in comparison to Webpack with some of these corner cases.
-
-- Webpack:
-
-  - Pro
-    - Great documentation and support meant that we had a very smooth time building an application with webpack. Working with webpack was enjoyable and webpack will go forward as our first consideration for future developement.
-  - Con
-    - 
 

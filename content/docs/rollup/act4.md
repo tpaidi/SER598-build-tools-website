@@ -103,15 +103,15 @@ Rename all `.js` files in the `src/` folder to `.ts` and add type annotations wh
 #### Example Conversion
 **Before (JavaScript):**
 ```javascript
-export function add(a, b) {
-    return a + b;
+export function add(num1: number, num2: number): number {
+    return num1 + num2;
 }
 ```
 
 **After (TypeScript):**
 ```typescript
-export function add(a: number, b: number): number {
-    return a + b;
+export function toUpperCase(stringToConvert: string): string {
+    return stringToConvert.toUpperCase();
 }
 ```
 
@@ -141,25 +141,64 @@ Configure separate outputs for CommonJS and ES Modules:
 ```javascript
 export default [
   {
-    input: ['./src/index.ts', './src/another.ts'],
-    external: ['lodash'],
+    input: ['./src/index.ts', './src/another.ts'], 
+    external: ['lodash'],                          
     output: {
-      dir: 'dist/cjs',
-      format: 'cjs',
+      dir: 'dist/cjs',              
+      format: 'cjs',                
       sourcemap: true,
-      preserveModules: true,
+      preserveModules: true,        
     },
-    plugins: plugins,
+    plugins: [
+      css({ output: 'cjs.css' }),
+      ...commonPlugins,
+      typescript({
+        tsconfig: './tsconfig.json',
+        declaration: true,                      
+        declarationDir: './dist/cjs/types',     
+      }),
+      terser(),
+    ],
   },
+  
+  // **ES Module (ESM) Build**
   {
-    input: ['./src/index.ts', './src/another.ts'],
-    external: ['lodash'],
+    input: ['./src/index.ts', './src/another.ts'], 
+    external: ['lodash'],                           
     output: {
-      dir: 'dist/esm',
-      format: 'esm',
+      dir: 'dist/esm',              
+      format: 'esm',                
       sourcemap: true,
     },
-    plugins: plugins,
+    plugins: [
+      css({ output: 'esm.css' }),
+      ...commonPlugins,
+      typescript({
+        tsconfig: './tsconfig.json',
+        declaration: true,                      
+        declarationDir: './dist/esm/types',     
+      }),
+      terser(), 
+    ],
+  },
+];
+```
+### Step 5 Browser related changes
+
+Note: Seems like iife support for dynamic imports in rollup does not work as of now. So an option called 'inlineDynamicImports' should be set to true in the output section of your rollup.config.js to prevent build errors.
+
+```javascript
+export default [
+  {
+    input: './src/index.ts',
+    output: {
+      file: 'dist/bundle.js',      
+      format: 'iife',               // IIFE format for browsers
+      sourcemap: true,
+      /* Prevents code-splitting for IIFE. This is important since rollup causes problems otherwise */
+      inlineDynamicImports: true,   
+    },
+    plugins: plugins, // the usual stuff mentioned before
   },
 ];
 ```
@@ -170,7 +209,7 @@ export default [
 
 ---
 
-### Step 5: Generate Type Declarations
+### Step 6: Generate Type Declarations
 Run the Rollup build command to generate the output bundles and type declaration files.
 
 #### Command
@@ -189,7 +228,7 @@ npm run build
 
 ### Final Output Screenshot
 
-- [Final typescript Bundle after following the above steps](/docs/rollup/typescript_bundle.png)
+![Final typescript Bundle after following the above steps](/docs/rollup/typescript_bundle.png)
 
 ---
 

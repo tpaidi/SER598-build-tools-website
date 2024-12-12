@@ -68,7 +68,7 @@ input: ['./src/index.js', './src/another.js'],
 
   - The output bundles will contain separate files for `index.js`, `another.js`, and their dependencies, ensuring only relevant chunks are loaded.
 
-  - [Code splitting gives us both modules in separate bundles](/docs/rollup/code_splitting_and_dynamic_import.png)
+![Code splitting gives us both modules in separate bundles](/docs/rollup/code_splitting_and_dynamic_import.png)
 ---
 
 ### Step 2: Preserve Modules
@@ -99,7 +99,7 @@ output: [
   - The `dist/cjs/` folder will retain the modular structure of the source files.
   - The `dist/esm/` folder will contain bundled ES module files.
 
-- [Preserve modules option for output plugin prserving module structure](/docs/rollup/preserve_module.png)
+![Preserve modules option for output plugin prserving module structure](/docs/rollup/preserve_module.png)
 
 ---
 
@@ -128,13 +128,13 @@ loadModule('math');
 Dynamic imports allow `dynamicImport1.js` or `dynamicImport2.js` to be loaded only when needed:
 ```javascript
 // src/dynamicImport1.js
-export function add(a, b) {
-    return a + b;
+function add(num1, num2) {
+    return num1 + num2;
 }
 
 // src/dynamicImport2.js
-export function toUpperCase(str) {
-    return str.toUpperCase();
+function toUpperCase(stringToConvert) {
+    return stringToConvert.toUpperCase();
 }
 ```
 
@@ -144,8 +144,8 @@ export function toUpperCase(str) {
 
   - The dynamically imported modules (`dynamicImport1.js` and `dynamicImport2.js`) will be loaded only when requested at runtime.
 
-  [dynamicImport bundle files](/docs/rollup/code_splitting_and_dynamic_import.png)
-  [Not used in bundle](/docs/rollup/dynamic_import.png)
+![dynamicImport bundle files](/docs/rollup/code_splitting_and_dynamic_import.png)
+![Not used in bundle](/docs/rollup/dynamic_import.png)
 
 ---
 
@@ -177,7 +177,7 @@ output: [
   - The `dist/cjs/` folder will contain CommonJS bundles.
   - The `dist/esm/` folder will contain ES module bundles.
 
-- [Multiple folders within dist](/docs/rollup/multiple_output_formats.png)
+![Multiple folders within dist](/docs/rollup/multiple_output_formats.png)
 
 ---
 

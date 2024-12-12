@@ -33,7 +33,7 @@ The source code is available in the [GitHub Repository here](https://github.com/
 
 ### Folder Structure ###
 ```
-activity1/
+activityNonRollup/
 ├── index.html
 ├── index.js
 ├── math.js
@@ -51,15 +51,14 @@ function multiply(a, b) {
     return a * b;
 }
 
-// Attach functions to the global window object
 window.add = add;
 window.multiply = multiply;
 ```
 
 **index.js**
 ```javascript
-console.log("Sum:", add(2, 3));    // Access global add function
-console.log("Product:", multiply(2, 3)); // Access global multiply function
+console.log("Sum:", add(2, 3));  
+console.log("Product:", multiply(2, 3)); 
 ```
 
 **index.html**
@@ -81,7 +80,7 @@ console.log("Product:", multiply(2, 3)); // Access global multiply function
 
 **Error Screenshot**
 
-- ![Error output](/docs/rollup/error.png)
+![Error output](/docs/rollup/error.png)
 
 **Correct Alternative**
 
@@ -104,7 +103,7 @@ console.log("Product:", multiply(2, 3)); // Access global multiply function
 
 **Correct Screenshot**
 
-- ![Correct output](/docs/rollup/works.png)
+![Correct output](/docs/rollup/works.png)
 
 **Why It Fails**
 - Manual Dependency Management:  
@@ -175,7 +174,7 @@ console.log("Product:", multiply(2, 3));
 ---
 
 ## What Is rollup.config.js? ##
-The `rollup.config.js` file is the configuration file for Rollup. It defines how Rollup processes and bundles files.
+The `rollup.config.js` file is the configuration file for Rollup. It defines how Rollup processes and bundles files. You will need to add this file directly to the directory at the root level.
 
 **rollup.config.js**
 ```javascript
@@ -220,16 +219,18 @@ export default {
 
 2. Install Rollup and Plugins:  
    ```bash
-   npm install --save-dev rollup rollup-plugin-html rollup-plugin-css-only
+   npm install --save-dev rollup rollup-plugin-html 
+   npm install --save-dev rollup-plugin-css-only
    npm install --save-dev http-server
    npm install --save-dev @rollup/plugin-html
-   npm install --save-dev rollup-plugin-css-only
    ```
 
-3. Create or Copy Required Files:  
+3. Add the rollup.config.js file as given in the earlier section.
+
+4. Create or Copy Required Files:  
    Create `index.js`, `index.html`, and `style.css` in the `src/` folder. For the purpose of this tutorial, we have pre-built files in the GitHub repository.
 
-4. Add Scripts to package.json:  
+5. Add Scripts to package.json:  
    For example:  
    ```json
    "scripts": {
@@ -238,7 +239,7 @@ export default {
    }
    ```
 
-5. Run Rollup:  
+6. Run Rollup:  
    - `npm run build` to generate the `dist` folder with `bundle.js`, `bundle.css`, and `index.html`.
    - `npm run serve` to start a local server and view your application in the browser.
 

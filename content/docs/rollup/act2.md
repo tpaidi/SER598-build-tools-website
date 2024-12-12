@@ -28,6 +28,7 @@ activity2/
 ├── rollup.config.js
 ├── dist/
 │   ├── bundle.js
+│   ├── bundle.js.map
 │   ├── bundle.css
 │   ├── index.html
 │   ├── bundle-stats.html
@@ -93,7 +94,7 @@ console.log(_.capitalize('hello rollup'));
 
   - The bundle includes the `lodash` module, enabling its usage in the code.
 
-  - [Visualizer from Step 4 showing loadash imported](/docs/rollup/visualiser.png)
+![Visualizer from Step 4 showing loadash imported](/docs/rollup/visualiser.png)
 
 ---
 
@@ -126,7 +127,7 @@ console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
 - The `moment` library is converted to ES6 format and included in the bundle.
 
-- [Visualizer from Step 4 showing moment imported](/docs/rollup/moment_in_visualiser.png)
+![Visualizer from Step 4 showing moment imported](/docs/rollup/moment_in_visualiser.png)
 
 ---
 

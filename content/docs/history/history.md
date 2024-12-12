@@ -1,3 +1,9 @@
+---
+weight: 3
+title: "History"
+bookToc: true
+bookFlatSection: false
+---
 # History of Bundling Web Applications
 
 During the initial stages of the Internet, the web functioned primarily as a file delivery platform. Over time, the web evolved from basic HTML pages to dynamic and interactive web applications powered by CSS and JavaScript. This shift from simple static webpages to complex, multi-component, and responsive applications created the need for bundling tools.

@@ -70,7 +70,6 @@ console.log("Product:", multiply(2, 3));
         <!-- Load scripts manually in the incorrect order -->
         <script src="index.js"></script>
         <script src="math.js"></script>
-        <!-- The above throws an error -->
     </head>
     <body>
         <h1>Without Rollup</h1>
@@ -93,7 +92,6 @@ console.log("Product:", multiply(2, 3));
         <!-- Load scripts manually in the correct order -->
         <script src="math.js"></script>
         <script src="index.js"></script>
-        <!-- The above throws an error -->
     </head>
     <body>
         <h1>Without Rollup</h1>
@@ -263,19 +261,6 @@ export default {
 
 6. Format Flexibility:  
    Rollup can output multiple formats (ES modules, CommonJS, etc.) to ensure compatibility with different browsers and environments.
-
----
-
-## Comparison Table ##
-
-| Feature               | Without Rollup                     | With Rollup                         |
-|-----------------------|-------------------------------------|-------------------------------------|
-| Dependency Management | Manual imports, error-prone         | Automatic resolution                |
-| Tree Shaking          | Not available                       | Eliminates unused code              |
-| Bundling              | Not supported                       | Combines files into a single bundle |
-| CSS Handling          | Manual linking                      | Bundled and extracted automatically |
-| Code Optimization     | Not optimized                       | Optimized for size and performance  |
-| Browser Compatibility | Only modern browsers                | Supports older and modern browsers  |
 
 ---
 

@@ -222,16 +222,6 @@ module.exports = {
 
 ---
 
-## **Comparison Table**
-| Feature                  | Without Webpack                         | With Webpack                       |
-|--------------------------|------------------------------------------|-------------------------------------|
-| **Dependency Management** | Manual imports, error-prone             | Automatic resolution               |
-| **Bundling**              | Not supported                           | Combines files into one bundle     |
-| **Browser Compatibility** | Only modern browsers                    | Supports older browsers if configured |
-| **Code Splitting**        | Difficult to implement manually         | Supported out of the box           |
-
----
-
 ## **Conclusion**
 1. **Without Webpack**:
    - Developers must manage script loading manually.

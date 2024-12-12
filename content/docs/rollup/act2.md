@@ -47,7 +47,6 @@ Add the Terser plugin to the `rollup.config.js` file:
 import terser from '@rollup/plugin-terser';
 
 export default {
-  // Other configurations
   plugins: [
     terser(), // Minify the bundle
   ],
@@ -73,7 +72,6 @@ Add the Resolve plugin to the `rollup.config.js` file:
 import resolve from '@rollup/plugin-node-resolve';
 
 export default {
-  // Other configurations
   plugins: [
     resolve(), // Resolve Node.js modules from node_modules
   ],
@@ -107,7 +105,6 @@ Add the CommonJS plugin to the `rollup.config.js` file:
 import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-  // Other configurations
   plugins: [
     commonjs(), // Convert CommonJS modules to ES6
   ],
@@ -117,7 +114,7 @@ export default {
 #### Example Usage
 In `src/index.js`, require the `moment` library (a CommonJS module):
 ```javascript
-import moment from 'moment'; // not in commonjs syntax, which is intended.
+import moment from 'moment'; 
 console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 ```
 
@@ -140,11 +137,10 @@ Add the Visualizer plugin to the `rollup.config.js` file:
 import { visualizer } from 'rollup-plugin-visualizer';
 
 export default {
-  // Other configurations
   plugins: [
     visualizer({
       filename: 'dist/bundle-stats.html',
-      open: true, // Automatically open the report in a browser
+      open: true, 
     }),
   ],
 };
@@ -172,10 +168,9 @@ Add the Analyzer plugin to the `rollup.config.js` file:
 import analyze from 'rollup-plugin-analyzer';
 
 export default {
-  // Other configurations
   plugins: [
     analyze({
-      summaryOnly: true, // Show only the summary in the terminal
+      summaryOnly: true, 
     }),
   ],
 };

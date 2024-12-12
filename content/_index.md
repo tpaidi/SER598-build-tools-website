@@ -51,4 +51,9 @@ All the source code used for the guides throughout this tutorial resides on this
 Specific folders will be referenced in granular detail when we dive deeper into each activity!
 {{% /hint %}}
 
-{{<button relref="/docs/webpack/act1/">}}>> Act 1{{</button>}}
+--- 
+## Creators
+- Ragland Pakiyaraj Rajasingh
+- Rahul Manoj
+- Siddhesh Jain
+- Tejesh Paidi

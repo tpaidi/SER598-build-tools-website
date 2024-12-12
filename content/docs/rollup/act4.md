@@ -128,7 +128,6 @@ Add the TypeScript plugin to `rollup.config.js`:
 import typescript from '@rollup/plugin-typescript';
 
 const plugins = [
-  // Other plugins
   typescript({
     tsconfig: './tsconfig.json',
     declaration: true,
@@ -161,7 +160,6 @@ export default [
     ],
   },
   
-  // **ES Module (ESM) Build**
   {
     input: ['./src/index.ts', './src/another.ts'], 
     external: ['lodash'],                           
@@ -193,9 +191,8 @@ export default [
     input: './src/index.ts',
     output: {
       file: 'dist/bundle.js',      
-      format: 'iife',               // IIFE format for browsers
+      format: 'iife',               
       sourcemap: true,
-      /* Prevents code-splitting for IIFE. This is important since rollup causes problems otherwise */
       inlineDynamicImports: true,   
     },
     plugins: plugins, // the usual stuff mentioned before

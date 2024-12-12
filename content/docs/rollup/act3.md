@@ -82,7 +82,7 @@ output: [
     dir: 'dist/cjs',
     format: 'cjs',
     sourcemap: true,
-    preserveModules: true, // Keep separate bundle files and module structure
+    preserveModules: true, 
   },
   {
     dir: 'dist/esm',

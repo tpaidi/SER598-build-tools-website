@@ -142,6 +142,15 @@ const plugins = [
 ];
 ```
 
+Common Plugins given below - 
+```javascript
+  const commonPlugins = [
+    resolve(),
+    commonjs(),
+    analyze({ summaryOnly: true }),
+  ];
+```
+
 Configure separate outputs for CommonJS and ES Modules:
 ```javascript
 export default [

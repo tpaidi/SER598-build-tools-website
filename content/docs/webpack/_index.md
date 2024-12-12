@@ -11,3 +11,6 @@ Webpack is a powerful **module bundler** primarily used for JavaScript applicati
 **In the following module**, we will start simple and progressively deep dive into the inefficiencies of **not using Webpack**. We’ll explore how **Webpack addresses these challenges** by managing modules, optimizing bundles, and improving app performance.
 
 **Strap in!** 🚀
+
+#### Note:
+You will need `node` and `npm` installed for the following section

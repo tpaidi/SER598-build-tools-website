@@ -4,7 +4,7 @@ title: "Activity 1"
 ---
 # **Webpack Demonstration: Activity 1 with and without Webpack**
 
-code for this activity can be found on the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/webpack/activity2webpack/cosmic-explorer-webpack).
+Code for this activity can be found on the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/webpack/activity1).
 
 ## **Problem Overview**
 Modern web applications often consist of multiple JavaScript files. Managing these files manually can lead to several challenges, such as:
@@ -40,7 +40,6 @@ activity1/
 
 #### `math.js`
 ```javascript
-// math.js
 function add(a, b) {
     return a + b;
 }
@@ -50,7 +49,6 @@ window.add = add;
 
 #### `index.js`
 ```javascript
-// index.js
 console.log(add(3, 5));
 ```
 
@@ -98,7 +96,11 @@ Let's now open up the `index.html` file on our browser to start the application 
 
 ---
 
-## **Activity 2: With Webpack**
+## **Activity 1: With Webpack**
+
+Now follow along and lets implement some basic functionalities of Webpack together!
+
+Completed code for this part of the activity can be found on the [GitHub Repository here](https://github.com/tpaidi/SER598-build-tools-tutorial/tree/main/webpack/activity1webpack).
 
 ### **Folder Structure**
 ```
@@ -115,42 +117,34 @@ activity1webpack/
 
 ### **Code**
 
+Update all the files code as below: 
+
 #### `src/math.js`
 ```javascript
-// math.js
 export function add(a, b) {
     return a + b;
-}
-
-export function multiply(a, b) {
-    return a * b;
 }
 ```
 
 #### `src/index.js`
 ```javascript
-// index.js
-import { add, multiply } from './math.js';
-
-console.log("Sum:", add(2, 3));
-console.log("Product:", multiply(2, 3));
+import { add } from './math.js';
+console.log(add(3, 5));
 ```
 
 #### `index.html`
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>With Webpack</title>
-        <script src="dist/bundle.js"></script>
-    </head>
-    <body>
-        <h1>With Webpack</h1>
-    </body>
+	<body>
+		<script src="dist/bundle.js"></script>
+	</body>
 </html>
 ```
 
 ### **What Is `webpack.config.js`?**
+
+Create a `webpack.config.js` in the root directory with the following code.
 The `webpack.config.js` file is the configuration file for Webpack. It defines how Webpack processes and bundles your files.
 
 #### **Code**
@@ -158,13 +152,14 @@ The `webpack.config.js` file is the configuration file for Webpack. It defines h
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js', // Entry file
+    entry: './src/index.js', 
     output: {
-        filename: 'bundle.js', // Output bundle file
-        path: path.resolve(__dirname, 'dist'), // Output directory
+        filename: 'bundle.js', 
+        path: path.resolve(__dirname, 'dist'), 
     },
-    mode: 'development', // Set mode to development for debugging
+    mode: 'development', 
 };
+
 ```
 
 ### **Important Parts of `webpack.config.js`**
@@ -210,8 +205,9 @@ module.exports = {
    This command creates the `dist/bundle.js` file.
 
 5. **Open in Browser**:
-   Open `index.html` in your browser. Ensure that it loads `dist/bundle.js`.
+   Open `index.html` in your browser. Ensure that it loads `dist/bundle.js`, we can also see that the `console.log()` works undependant on import order
 
+	![2](/docs/webpack/2.png)
 ---
 
 ### **Why Webpack Succeeds**
@@ -221,10 +217,7 @@ module.exports = {
 2. **Script Order**:
    - Script order in `index.html` doesn’t matter because Webpack handles dependencies internally.
 
-3. **Performance**:
-   - Only one HTTP request is made to load `bundle.js`, improving page load times.
-
-4. **Scalability**:
+3. **Scalability**:
    - Webpack simplifies managing large projects by modularizing code and resolving dependencies.
 
 ---
@@ -235,7 +228,6 @@ module.exports = {
 | **Dependency Management** | Manual imports, error-prone             | Automatic resolution               |
 | **Bundling**              | Not supported                           | Combines files into one bundle     |
 | **Browser Compatibility** | Only modern browsers                    | Supports older browsers if configured |
-| **HTTP Requests**         | Multiple requests for each file         | Single request for the bundle      |
 | **Code Splitting**        | Difficult to implement manually         | Supported out of the box           |
 
 ---

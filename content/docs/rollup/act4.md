@@ -65,6 +65,12 @@ Run the following command to install the required packages:
 npm install --save-dev @rollup/plugin-typescript typescript
 ```
 
+#### Some additional installations to test some of the steps below
+```bash
+   npm install --save-dev @types/moment
+   npm install --save-dev @types/lodash 
+   npm install --save-dev tslib
+```
 ---
 
 ### Step 2: Add TypeScript Configuration
@@ -134,6 +140,15 @@ const plugins = [
     declarationDir: 'dist/types',
   }),
 ];
+```
+
+Common Plugins given below - 
+```javascript
+  const commonPlugins = [
+    resolve(),
+    commonjs(),
+    analyze({ summaryOnly: true }),
+  ];
 ```
 
 Configure separate outputs for CommonJS and ES Modules:

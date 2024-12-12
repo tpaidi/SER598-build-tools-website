@@ -36,7 +36,7 @@ bookFlatSection: false
 
 ### Overall Observations for the basis of general opinions above
 
-We will go through and make observations regarding each of the main bundling tools and then later, come to some opinions based on these observations.
+We will go through and make observations regarding each of the main bundling tools.
 
 # Webpack
 

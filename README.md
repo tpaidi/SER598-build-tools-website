@@ -21,11 +21,11 @@ Main branch is built and continuously deployed on Netlify here- ![SER 421- Build
 ---
 
 ## **2. Clone the Site Repository**
-- Use the following commands to clone the repository and navigate into the project directory:
+- Use the following commands to clone the repository and navigate into the project directory, since the repository includes a git submodule pass the `--recurse-submodules` flag to clone it too:
 
   ```
-  git clone https://github.com/tpaidi/SER598-build-tools-website.git
-  cd https://github.com/tpaidi/SER598-build-tools-website.git
+  git clone --recurse-submodules https://github.com/tpaidi/SER598-build-tools-website.git
+  cd SER598-build-tools-website
   ```
 
 ---
